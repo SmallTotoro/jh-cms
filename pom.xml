@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v3_5_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.jeecms</groupId>
-  <artifactId>jeecmsv9f</artifactId>
+  <groupId>com.weijunhe</groupId>
+  <artifactId>jh-cms</artifactId>
   <packaging>war</packaging>
   <version>9.0</version>
-  <url>http://www.jeecms.com</url>
-  <name>jeecmsv9f</name>
+  <url>http://www.weijunhe.com</url>
+  <name>jh-cms</name>
   <organization>
-	<name>jeecms</name>
-	<url>http://www.jeecms.com/</url>
+	<name>jh-cms</name>
+	<url>http://www.weijunhe.com/</url>
   </organization>
   <properties>
   	<java.version>1.7</java.version>
@@ -784,7 +784,23 @@
   </dependencies>
   
   <build>
-    <finalName>jeecmsv9f</finalName>
+    <finalName>jh-cms</finalName>
+	  <!--解决idea无法编译的问题-->
+	  <resources>
+		  <!-- 编译之后包含xml和properties -->
+		  <resource>
+			  <directory>src/main/java</directory>
+			  <includes>
+				  <include>**/*.xml</include>
+				  <include>**/*.properties</include>
+			  </includes>
+			  <filtering>true</filtering>
+		  </resource>
+
+		  <resource>
+			  <directory>${project.basedir}/src/main/resources</directory>
+		  </resource>
+	  </resources>
     <plugins>
     	<!-- 指定jdk1.7编译，否则maven update 可能调整jdk-->
     	<plugin>  
@@ -812,5 +828,5 @@
 		</plugin>
 	</plugins>
   </build>
-  <description>jeecms是企业级开源网站内容管理系统，支持网站群，支持MySQL、Oracle、SQLServer等数据库,以及具备支付和财务结算能力，支持微信小程序、微信公众号/服务号、完善的WebApi支持</description>
+  <description>个人学习使用！</description>
 </project>
